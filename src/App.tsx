@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import DemoTypeAnnotation from './components/DemoTypeAnnotations';
 import DemoInterfaceAndType from './components/DemoInterfaceAndType';
