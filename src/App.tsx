@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import DemoTypeAnnotation from './components/DemoTypeAnnotations';
 import DemoInterfaceAndType from './components/DemoInterfaceAndType';
 import DemoGeneric from './components/DemoGeneric';
@@ -12,47 +12,31 @@ import DemoUseReducer from './hook/DemoUseReducer';
 import DemoUseRef from './hook/DemoUseRef';
 import DemoUseMemo from './hook/DemoUseMemo';
 import DemoUseCallback from './hook/DemoUseCallBack';
+import MainLayout from './layout/MainLayout';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<MainLayout />} >
+      {/* <Route index element={<MainLayout />} /> */}
+      <Route path='/type-annotations' element={<DemoTypeAnnotation />} />
+      <Route path='/interface-and-type' element={<DemoInterfaceAndType />} />
+      <Route path='/generic' element={<DemoGeneric />} />
+      <Route path='/union-types' element={<DemoUnionTypes />} />
+      <Route path='/enum' element={<DemoEnum />} />
+      <Route path='/use-state' element={<DemoUseState initialValue={1} />} />
+      <Route path='/use-effect' element={<DemoUseEffect />} />
+      <Route path='/use-context' element={<DemoUseContext />} />
+      <Route path='/use-reducer' element={<DemoUseReducer />} />
+      <Route path='/use-ref' element={<DemoUseRef />} />
+      <Route path='/use-memo' element={<DemoUseMemo />} />
+      <Route path='/use-callback' element={<DemoUseCallback />} />
+    </Route>
+  )
+);
+
 function App() {
   return (
-    <>
-    <div>
-      <div>
-      <h1 className='header'>Feature TypeScript</h1>
-      <div className='container'>
-      <h2>Type Annotation</h2>
-      <DemoTypeAnnotation />
-      <h2>Interface And Type</h2>
-      <DemoInterfaceAndType />
-      <h2>Generics</h2>
-      <DemoGeneric />
-      <h2>Union Types</h2>
-      <DemoUnionTypes />
-      <h2>Enum</h2>
-      <DemoEnum />
-      </div>
-      <div>
-      <h1 className='header'>Hook TypeScript</h1>
-      <div>
-        <h2>Use State</h2>
-        <DemoUseState initialValue={0}/>
-        <h2>Use Effect</h2>
-        <DemoUseEffect />
-        <h2>Use Context</h2>
-        <DemoUseContext />
-        <h2>Use Reducer</h2>
-        <DemoUseReducer />
-        <h2>Use Ref</h2>
-        <DemoUseRef />
-        <h2>Use Memo</h2>
-        <DemoUseMemo />
-        <h2>Use CallBack</h2>
-        <DemoUseCallback />
-      </div>
-      </div>
-      </div>
-    </div>
-    
-    </>
+    <RouterProvider router={router} />
   )
 }
 
