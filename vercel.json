@@ -1,0 +1,57 @@
+{
+    "routes":
+    [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/type-annotations",
+            "dest": "/"
+        },
+        {
+            "src": "/interface-and-type",
+            "dest": "/"
+        },
+        {
+            "src": "/generic",
+            "dest": "/"
+        },
+        {
+            "src": "/union-types",
+            "dest": "/"
+        },
+        {
+            "src": "/enum",
+            "dest": "/"
+        },
+        {
+            "src": "/use-state",
+            "dest": "/"
+        },
+        {
+            "src": "/use-effect",
+            "dest": "/"
+        },
+        {
+            "src": "/use-context",
+            "dest": "/"
+        },
+        {
+            "src": "/use-reducer",
+            "dest": "/"
+        },
+        {
+            "src": "/use-ref",
+            "dest": "/"
+        },
+        {
+            "src": "/use-memo",
+            "dest": "/"
+        },
+        {
+            "src": "/use-callback",
+            "dest": "/"
+        }
+    ]
+}
